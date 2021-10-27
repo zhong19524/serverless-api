@@ -1,0 +1,17 @@
+name = "serverless-api"
+type = "javascript"
+zone_id = ""
+account_id = "21426d2b4c02f923d57f3c222ea9ed77"
+route = ""
+workers_dev = true
+compatibility_date = "2021-10-24"
+
+kv_namespaces = [
+         { binding = "MY_KV", id = "d61ab5da875e4fb2bcaea803ae409b2d", preview_id = "ce73472cdd3449a298e0e19c3cdab7d6" }
+]
+
+[build]
+command = "npm install && npm run build"
+[build.upload]
+format = "service-worker"
+
