@@ -1,4 +1,6 @@
 const path = require('path')
+// webpack needs to be explicitly required
+const webpack = require('webpack')
 
 module.exports = {
   entry: './src/index.ts',
@@ -10,6 +12,12 @@ module.exports = {
   mode: 'development',
   resolve: {
     extensions: ['.ts', '.tsx', '.js'],
+    fallback: { "fs": false,
+                "process":false,
+                "Buffer":false,
+                "stream":false,
+                "crypto": require.resolve("crypto-browserify")
+              },
   },
   module: {
     rules: [
@@ -21,6 +29,22 @@ module.exports = {
           // transpileOnly: true,
         },
       },
+      {
+        test: /\.md$/i,
+        use: 'raw-loader',
+      },
     ],
   },
+  plugins: [
+    // fix "process is not defined" error:
+    // (do "npm install process" before running the build)
+    new webpack.ProvidePlugin({
+      process: 'process/browser',
+    }),
+    // fix "Buffer is not defined" error:
+    new webpack.ProvidePlugin({
+      Buffer: [require.resolve("buffer/"), "Buffer"],
+    }),
+    
+  ]
 }

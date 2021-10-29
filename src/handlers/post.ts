@@ -1,4 +1,3 @@
-import Store from '../posts_store'
 declare const MY_KV: KVNamespace
 
 const Post = async request => {

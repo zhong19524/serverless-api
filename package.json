@@ -21,6 +21,7 @@
   "devDependencies": {
     "@cloudflare/workers-types": "^3.0.0",
     "@types/jest": "^26.0.23",
+    "@types/node": "^16.11.6",
     "@types/service-worker-mock": "^2.0.1",
     "@types/webrtc": "0.0.30",
     "@typescript-eslint/eslint-plugin": "^4.16.1",
@@ -30,6 +31,7 @@
     "eslint-config-typescript": "^3.0.0",
     "jest": "^27.0.1",
     "prettier": "^2.3.0",
+    "raw-loader": "^4.0.2",
     "service-worker-mock": "^2.0.5",
     "ts-jest": "^27.0.1",
     "ts-loader": "^9.2.2",
@@ -38,6 +40,13 @@
     "webpack-cli": "^4.7.0"
   },
   "dependencies": {
-    "itty-router": "^2.4.4"
+    "@types/jsonwebtoken": "^8.5.5",
+    "buffer": "^6.0.3",
+    "crypto-browserify": "^3.12.0",
+    "itty-router": "^2.4.4",
+    "jsonwebtoken": "^8.5.1",
+    "process": "^0.11.10",
+    "stream": "^0.0.2",
+    "util": "^0.12.4"
   }
 }
